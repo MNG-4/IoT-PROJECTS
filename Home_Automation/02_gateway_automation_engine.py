@@ -24,27 +24,27 @@ class HomeAutomationGateway:
                 self.evaluate_rules(room, data)
                 
         except json.JSONDecodeError:
-            print(f"❌ Failed to parse malformed payload on topic: {topic}")
+            print(f"Failed to parse malformed payload on topic: {topic}")
 
     def evaluate_rules(self, room: str, metrics: dict):
         """Rule engine simulating localized automation logic conditions."""
         # Rule 1: Energy Saver Mode (Auto-shutoff on vacancy)
         if metrics.get("motion") == 0:
-            print(f"💡 [Rule Triggered] No occupancy detected in {room}. Issuing power-saving shutdown instruction to relay module.")
+            print(f"[Rule Triggered] No occupancy detected in {room}. Issuing power-saving shutdown instruction to relay module.")
             self.send_actuator_command(f"home/actuators/relay", "OFF")
             
         # Rule 2: High Temperature HVAC Threshold Automation
         if metrics.get("temperature", 0) > 26.0:
-            print(f"🚨 [Rule Triggered] Critical Temperature threshold exceeded ({metrics['temperature']}°C) in {room}. Initializing climate control overrides.")
+            print(f"[Rule Triggered] Critical Temperature threshold exceeded ({metrics['temperature']}°C) in {room}. Initializing climate control overrides.")
             self.send_actuator_command(f"home/actuators/relay", "ON")
 
     def send_actuator_command(self, topic: str, command: str):
         """Simulates outgoing control frames dispatching back out over network channels."""
-        print(f"📤 [Control Dispatch] Channel: {topic} ----> Target State: [{command}]")
+        print(f"[Control Dispatch] Channel: {topic} ----> Target State: [{command}]")
 
 
 if __name__ == "__main__":
-    print("🚀 Initializing Local Edge Gateway Core Automation Engine...")
+    print("Initializing Local Edge Gateway Core Automation Engine...")
     gateway = HomeAutomationGateway()
     
     # Simulating a live telemetry stream loop over network connections
