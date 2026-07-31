@@ -23,17 +23,17 @@ class EnergyAnalyticsEngine:
             consumed_kwh = (power / 1000.0) * time_delta_hours
             self.cumulative_kwh += consumed_kwh
             
-            print(f"⚡ [{datetime.now().strftime('%H:%M:%S')}] P: {power:.1f}W | I: {current:.2f}A | Total Accumulation: {self.cumulative_kwh:.6f} kWh")
+            print(f"[{datetime.now().strftime('%H:%M:%S')}] P: {power:.1f}W | I: {current:.2f}A | Total Accumulation: {self.cumulative_kwh:.6f} kWh")
             
             # Power System Safety Rule Enforcement
             if power > self.max_load_threshold:
-                print(f"🚨 [OVERLOAD ALERT] Demand threat detected! Peak load exceeded safety margins: {power}W")
+                print(f"[OVERLOAD ALERT] Demand threat detected! Peak load exceeded safety margins: {power}W")
                 
         except json.JSONDecodeError:
-            print("❌ Malformed packet structure dropped.")
+            print("Malformed packet structure dropped.")
 
 if __name__ == "__main__":
-    print("📈 Activating Grid Energy Telemetry Analytics Processing Suite...")
+    print("Activating Grid Energy Telemetry Analytics Processing Suite...")
     engine = EnergyAnalyticsEngine()
     
     # Simulating a live streaming power telemetry loop
