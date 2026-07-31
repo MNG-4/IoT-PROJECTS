@@ -4,7 +4,7 @@ An event-driven, hardware-agnostic Smart Home Automation subsystem implementing 
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The ecosystem relies on an uncoupled architecture linking thin firmware edge clients directly to a central edge coordination gateway engine:
 
