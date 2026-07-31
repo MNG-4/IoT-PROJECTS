@@ -4,7 +4,7 @@ An instrumentation and telemetry monitoring platform engineered to capture alter
 
 ---
 
-## ⚡ Power System Instrumentation Theory
+## Power System Instrumentation Theory
 
 The system uses standard alternating current instrumentation frameworks to capture active loading metrics safely:
 
@@ -14,14 +14,14 @@ The system uses standard alternating current instrumentation frameworks to captu
 
 ---
 
-## 📂 Repository Architecture
+## Repository Architecture
 
 * **`energy_monitor_node.ino`**: Microcontroller firmware configuration written in C++ that processes analog current signals, handles mathematical calibrations, and outputs payload telemetry metrics across local interfaces.
 * **`power_analytics_engine.py`**: A python-based gateway monitoring system that ingests load metrics, integrates demand tracking loops over active windows to compile Kilowatt-hour ($\text{kWh}$) consumption metrics, and triggers automatic load-shedding warning notifications.
 
 ---
 
-## 🛠️ Environmental Requirements
+## Environmental Requirements
 
 ### Edge Layer Components
 * **Hardware Profile:** ESP32, ESP8266, or equivalent ADC microcontrollers.
