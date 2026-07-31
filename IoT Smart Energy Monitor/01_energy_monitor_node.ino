@@ -75,6 +75,6 @@ void loop() {
                    ",\"active_power\":" + String(activePower, 1) + "}";
 
   client.publish("grid/meter/billing_node_01", payload.c_str());
-  Serial.println("📤 Data Dispatched: " + payload);
+  Serial.println("Data Dispatched: " + payload);
   delay(3000); // Send telemetry updates every 3 seconds
 }
