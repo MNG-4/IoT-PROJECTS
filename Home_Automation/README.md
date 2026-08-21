@@ -1,6 +1,6 @@
 # Edge-IoT-Home-Automation
 
-An event-driven, hardware-agnostic Smart Home Automation subsystem implementing local edge telemetry analytics, parameter-controlled automated feedback triggers, and network communication handling.
+An event-driven, hardware-agnostic smart home automation subsystem implementing local edge telemetry analytics, parameter-controlled automated feedback triggers, and network communication handling.
 
 ---
 
